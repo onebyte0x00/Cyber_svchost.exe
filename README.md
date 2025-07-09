@@ -48,9 +48,7 @@ D. Exploiting Vulnerable Services
 Mechanism: Some services hosted in svchost.exe have known vulnerabilities (e.g., buffer overflows, privilege escalations).
 
 Examples:
-
 MS08-067 (NetAPI): Allowed remote code execution via svchost.exe.
-
 EternalBlue (CVE-2017-0144): Exploited SMB service in svchost.exe for WannaCry ransomware.
 
 E. Impersonation & Token Theft
@@ -98,13 +96,13 @@ Configure CWDIllegalInDllSearch registry key to prevent DLL hijacking.
 
 C. Monitor svchost.exe Activity
 Use Sysmon to detect unusual svchost.exe behavior:
+\n <!--
 xml
-
-&lt;!-- <ProcessCreate onmatch="include">  --&gt;
-&lt;!--   <Image condition="contains">svchost.exe</Image> --&gt;
-&lt;!--   <CommandLine condition="contains">-k suspiciousGroup</CommandLine> --&gt;
-&lt;!-- </ProcessCreate> --&gt;
-
+ <ProcessCreate onmatch="include"> 
+ <Image condition="contains">svchost.exe</Image>
+ <CommandLine condition="contains">-k suspiciousGroup</CommandLine>
+ </ProcessCreate> 
+--> \n
 D. Patch Vulnerable Services
 Apply Windows updates to fix known service vulnerabilities.
 
