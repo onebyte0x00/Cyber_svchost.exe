@@ -1,25 +1,10 @@
 # Cyber_svchost.exe
-svchost.exe (Service Host) is a critical system process in Windows responsible for hosting multiple Windows services. It allows Microsoft to group services into a single process, reducing resource overhead. However, due to its privileged nature and widespread use, svchost.exe is a common target for attackers.
-
-This article explores:
-
-The legitimate functionality of svchost.exe
-
-Common attack vectors targeting svchost.exe
-
-The attack surface associated with svchost.exe
-
-Mitigation strategies to secure svchost.exe
-
-1. Legitimate Functionality of svchost.exe
-svchost.exe is a core Windows component that dynamically loads and runs services from Dynamic Link Libraries (DLLs). Instead of running each service as a separate process, Windows consolidates them under shared svchost.exe instances to optimize memory and CPU usage.
+1.svchost.exe is a core Windows component that dynamically loads and runs services from Dynamic Link Libraries (DLLs). Instead of running each service as a separate process, Windows consolidates them under shared svchost.exe instances to optimize memory and CPU usage.
 
 How svchost.exe Works
-Service Grouping: Services with similar privileges are grouped under a single svchost.exe instance.
-
-DLL Hosting: Services implemented as DLLs are loaded into svchost.exe rather than running as standalone executables.
-
-Registry Configuration: The HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Svchost registry key defines which services run under which svchost.exe instance.
+* Service Grouping: Services with similar privileges are grouped under a single svchost.exe instance. It allows Microsoft to group services into a single process, reducing resource overhea
+* DLL Hosting: Services implemented as DLLs are loaded into svchost.exe rather than running as standalone executables.
+* Registry Configuration: The HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Svchost registry key defines which services run under which svchost.exe instance.
 
 2. Attack Vectors Targeting svchost.exe
 Due to its high privileges and system-level access, svchost.exe is a prime target for exploitation. Attackers leverage various techniques to abuse this process.
