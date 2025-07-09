@@ -26,12 +26,13 @@ Service Installation: Using sc.exe or PowerShell to register a rogue service.
 Binary Path Modification: Changing the service’s DLL path to a malicious one via regedit or sc config.
 
 Example:
-<!--
+\n<!-- 
 ---------------------------------------------------------------------------------------------
 powershell
 sc create MaliciousService binPath= "C:\evil\malicious.dll" type= share start= auto  
 ---------------------------------------------------------------------------------------------
--->
+-->\n
+
 C. Process Injection (DLL/Code Injection)
 Mechanism: Attackers inject malicious code into a running svchost.exe process.
 
