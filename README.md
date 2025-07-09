@@ -98,7 +98,7 @@ Configure CWDIllegalInDllSearch registry key to prevent DLL hijacking.
 
 C. Monitor svchost.exe Activity
 Use Sysmon to detect unusual svchost.exe behavior:
-<!--
+'<!--
 --------------------------------------------------------------------------------------------------
 xml
 <ProcessCreate onmatch="include">
@@ -106,7 +106,7 @@ xml
   <CommandLine condition="contains">-k suspiciousGroup</CommandLine>
 </ProcessCreate>
 ---------------------------------------------------------------------------------------------------
--->
+-->'
 
 D. Patch Vulnerable Services
 Apply Windows updates to fix known service vulnerabilities.
