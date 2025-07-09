@@ -26,10 +26,12 @@ Service Installation: Using sc.exe or PowerShell to register a rogue service.
 Binary Path Modification: Changing the service’s DLL path to a malicious one via regedit or sc config.
 
 Example:
+<!--
 ---------------------------------------------------------------------------------------------
 powershell
 sc create MaliciousService binPath= "C:\evil\malicious.dll" type= share start= auto  
 ---------------------------------------------------------------------------------------------
+-->
 C. Process Injection (DLL/Code Injection)
 Mechanism: Attackers inject malicious code into a running svchost.exe process.
 
@@ -95,6 +97,7 @@ Configure CWDIllegalInDllSearch registry key to prevent DLL hijacking.
 
 C. Monitor svchost.exe Activity
 Use Sysmon to detect unusual svchost.exe behavior:
+<!--
 --------------------------------------------------------------------------------------------------
 xml
 <ProcessCreate onmatch="include">
@@ -102,6 +105,8 @@ xml
   <CommandLine condition="contains">-k suspiciousGroup</CommandLine>
 </ProcessCreate>
 ---------------------------------------------------------------------------------------------------
+-->
+
 D. Patch Vulnerable Services
 Apply Windows updates to fix known service vulnerabilities.
 
